@@ -2,7 +2,7 @@
 A cookiecutter template that reflects my favored structure for setting up Snakemake-based analysis pipelines.
 
 
-[Cookiecutter](https://github.com/audreyr/cookiecutter) template for a [Snakemake](https://bitbucket.org/snakemake/snakemake/wiki/Home) pipeline.
+A [Cookiecutter](https://github.com/audreyr/cookiecutter) template for a [Snakemake](https://bitbucket.org/snakemake/snakemake/wiki/Home) pipeline.
 
 - GitHub repo: https://github.com/xguse/cookiecutter-snakemake-analysis-pipeline/
 
