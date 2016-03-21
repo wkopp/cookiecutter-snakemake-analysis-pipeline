@@ -1,4 +1,4 @@
-# {{ cookiecutter.project_name }}
+# {{ cookiecutter.pipeline_name }}
 
 
 version number: {{ cookiecutter.version }}
@@ -6,7 +6,7 @@ author: {{ cookiecutter.full_name }}
 
 ## Overview
 
-{{ cookiecutter.project_short_description }}
+{{ cookiecutter.pipeline_short_description }}
 
 ### Details
 TBA

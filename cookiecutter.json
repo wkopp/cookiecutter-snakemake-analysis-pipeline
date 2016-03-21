@@ -3,10 +3,10 @@
     "email": "w.gus.dunn@gmail.com",
     "github_username": "xguse",
 
-    "project_name": "Cool pipeline name",
-    "repo_name": "cool-pipeline-name",
-    "project_short_description": "Quick reason(s) why this pipeline is cool.",
+    "pipeline_name": "Cool pipeline name",
+    "repo_name": "{{cookiecutter.pipeline_name|replace(' ', '-')|lower}}",
+    "pipeline_short_description": "Quick reason(s) why this pipeline is cool.",
 
     "year": "2016",
-    "version": "0.1.0"
+    "version": "0.0.1"
 }
