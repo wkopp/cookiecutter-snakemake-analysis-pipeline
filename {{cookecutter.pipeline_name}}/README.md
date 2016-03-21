@@ -50,10 +50,12 @@ $ conda create -n ENV_NAME --file requirements.txt
 ## Basic usage
 1. Navigate to the pipeline directory.
 2. Switch to the correct conda execution environment.
+
     ```shell
     $ source activate ENV_NAME
     ```
 3. Run the pipeline via the `snakemake` command.
+
     ```shell
     $ snakemake -configfile path/to/your/configfile.yaml all
     ```
