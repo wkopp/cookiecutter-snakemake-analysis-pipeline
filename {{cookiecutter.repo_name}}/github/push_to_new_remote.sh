@@ -13,4 +13,4 @@ git remote add origin {{cookiecutter.github_url}}
 git remote -v
 
 # Pushes the changes in your local repository up to the remote repository you specified as the origin
-git push origin master
+git push --set-upstream origin master
