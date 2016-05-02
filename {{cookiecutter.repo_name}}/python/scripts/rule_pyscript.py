@@ -1,4 +1,6 @@
 """Describe here what this rule accomplishes."""
+import logging
+logging.basicConfig(filename=snakemake.log.path,level=logging.INFO)
 
 import pandas as pd
 

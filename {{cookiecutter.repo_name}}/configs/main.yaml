@@ -14,3 +14,9 @@ RULE_RSCRIPT:
     SETTINGA: ''
     IN_FILEA: ''
     IN_FILEB: ''
+
+# --------------------------------------
+RULE_SHELL_CMD:
+    SETTING_1: ''
+    IN_FILE_1: ''
+    IN_FILE_2: ''

@@ -121,6 +121,50 @@ rule rule_rscript:
         "r/scripts/rule_rscript.R"
 INPUT_ALL.append(rules.rule_rscript.output)
 
+# ------------------------- #
+#### RULE_SHELL_CMD ####
+RULE_SHELL_CMD = config["RULE_SHELL_CMD"]
+
+# log
+LOG_RULE_SHELL_CMD = LOGS_DIR+"/rule_shell_cmd.log"
+
+# params
+SETTING_1 = RULE_SHELL_CMD["SETTING_1"]
+
+# input
+IN_FILE_1 = RULE_SHELL_CMD["IN_FILE_1"]
+IN_FILE_2 = RULE_SHELL_CMD["IN_FILE_2"]
+
+# output
+RULE_SHELL_CMD_DIR = OUT_DIR+"/rule_shell_cmd"
+RULE_SHELL_CMD_OUT = RULE_SHELL_CMD_DIR+"/rule_shell_cmd.txt"
+
+# ---
+rule rule_shell_cmd:
+    log:
+        path=LOG_RULE_SHELL_CMD
+
+    params:
+        setting_1=SETTING_1,
+
+    input:
+        in_file_1=IN_FILE_1,
+        in_file_2=IN_FILE_2,
+
+    output:
+        rule_shell_cmd_out=RULE_SHELL_CMD_OUT,
+
+    shell:
+        """ \
+        cat {params.setting_1} \
+        {input.in_file_1} \
+        {input.in_file_2} \
+        > {output.rule_shell_cmd_out} \
+        &> {log.path}
+        """
+
+
+# ------------------------- #
 
 
 #### ALL ####
