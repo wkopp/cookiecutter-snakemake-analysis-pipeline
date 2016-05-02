@@ -22,7 +22,9 @@ ORIGINAL_CONFIG_AS_STRING = yaml.dump(config, default_flow_style=False)
 
 RUN_NAME = config["COMMON"]["RUN_NAME"]
 OUT_DIR = "{base_dir}/{run_name}".format(base_dir=config["COMMON"]["OUT_DIR_LOCATION"], run_name=RUN_NAME)
+LOGS_DIR = OUT_DIR+"/logs"
 
+INPUT_ALL = []
 
 
 
@@ -41,10 +43,15 @@ rule save_run_config:
         with open(output.file, 'w') as cnf_out:
             cnf_out.write(ORIGINAL_CONFIG_AS_STRING)
 
+INPUT_ALL.append(rules.save_run_config.output)
+
 
 # ------------------------- #
 #### RULE_PYSCRIPT ####
 RULE_PYSCRIPT = config["RULE_PYSCRIPT"]
+
+# log
+LOG_RULE_PYSCRIPT = LOGS_DIR+"/rule_pyscript.log"
 
 # params
 SETTING1 = RULE_PYSCRIPT["SETTING1"]
@@ -74,11 +81,15 @@ rule rule_pyscript:
 
     script:
         "python/scripts/rule_pyscript.py"
+INPUT_ALL.append(rules.rule_pyscript.output)
 
 
 # ------------------------- #
 #### RULE_RSCRIPT ####
 RULE_RSCRIPT = config["RULE_RSCRIPT"]
+
+# log
+LOG_RULE_RSCRIPT = LOGS_DIR+"/rule_rscript.log"
 
 # params
 SETTINGA = RULE_RSCRIPT["SETTINGA"]
@@ -108,15 +119,11 @@ rule rule_rscript:
 
     script:
         "r/scripts/rule_rscript.R"
+INPUT_ALL.append(rules.rule_rscript.output)
 
 
 
 #### ALL ####
-input_all = [rules.save_run_config.output,
-             rules.rule_pyscript.output,
-             rules.rule_rscript.output,
-             ]
 # ---
 rule all:
-    input:
-        input_all
+    input: input_all

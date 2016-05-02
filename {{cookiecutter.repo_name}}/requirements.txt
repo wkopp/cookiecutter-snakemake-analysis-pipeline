@@ -1,8 +1,8 @@
-# This file may be used to create an environment using:
+# Use this file to create an environment using:
 # $ conda create --name env_name -c bioconda  --file <this file>
 
 # REQUIRED: DO NOT CHANGE
-python>=3.4.3
+python>=3.5
 graphviz>=2.38.0
 snakemake>=3.4.2
 
