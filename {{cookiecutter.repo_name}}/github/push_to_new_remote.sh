@@ -6,7 +6,7 @@ github-create () {
 
     repo_name=$1
 
-    dir_name=`basename $(pwd)`
+    dir_name=$(basename $(pwd))
 
     CURL=$(which curl)
 
@@ -42,11 +42,11 @@ github-create () {
         invalid_credentials=1
     fi
 
-    if [ "$invalid_credentials" == "1" ]; then
+    if [[ $invalid_credentials == "1" ]]; then
         return 1
     fi
 
-    if [ $INIT_GIT == "n" ]; then
+    if [[ $INIT_GIT == "n" ]]; then
         echo "[git-create][info]: No git init detected; creating and performing intial commit..."
         git init
         git add .
