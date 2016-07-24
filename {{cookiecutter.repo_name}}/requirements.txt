@@ -5,6 +5,11 @@
 python>=3.5
 graphviz>=2.38.0
 snakemake>=3.4.2
+click
+Sphinx
+coverage
+awscli
+flake8
 
 # Packages specific to your pipeline
 ipython
