@@ -3,6 +3,7 @@
 # See tutorial at: http://tiny.cc/snakemake_tutorial
 
 import os
+import pathlib
 
 import yaml
 
@@ -21,8 +22,8 @@ ORIGINAL_CONFIG_AS_STRING = yaml.dump(config, default_flow_style=False)
 #### COMMON RUN SPECIFICS ####
 
 RUN_NAME = config["COMMON"]["RUN_NAME"]
-OUT_DIR = "{base_dir}/{run_name}".format(base_dir=config["COMMON"]["OUT_DIR_LOCATION"], run_name=RUN_NAME)
-LOGS_DIR = OUT_DIR+"/logs"
+OUT_DIR = pathlib.Path("{base_dir}/{run_name}".format(base_dir=config["COMMON"]["OUT_DIR_LOCATION"], run_name=RUN_NAME))
+LOGS_DIR = OUT_DIR / "logs"
 
 INPUT_ALL = []
 
@@ -32,7 +33,7 @@ INPUT_ALL = []
 
 
 #### SAVE_RUN_CONFIG ####
-SAVE_RUN_CONFIG_OUT = OUT_DIR+"/{RUN_NAME}.yaml".format(RUN_NAME=RUN_NAME)
+SAVE_RUN_CONFIG_OUT = OUT_DIR / "{RUN_NAME}.yaml".format(RUN_NAME=RUN_NAME)
 
 rule save_run_config:
     input:
