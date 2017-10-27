@@ -1,15 +1,14 @@
 {
-    "full_name": "Gus Dunn",
-    "email": "w.gus.dunn@gmail.com",
-    "github_username": "xguse",
-    "github_org": "",
+    "full_name": "Wolfgang Kopp",
+    "email": "wolfgang.kopp@mdc-berlin.de",
+    "github_username": "wkopp",
+    "github_org": "github.com",
+    "github_url": "git@github.com:{{cookiecutter.github_org if cookiecutter.github_org else cookiecutter.github_username}}/{{cookiecutter.repo_name}}.git",
 
-    "pipeline_name": "Cool pipeline name",
-    "repo_name": "{{cookiecutter.pipeline_name|replace(' ', '-')|lower}}",
-    "pipeline_short_description": "Quick reason(s) why this pipeline is cool.",
+    "project_name": "ProjectName",
+    "repo_name": "{{cookiecutter.project_name|replace(' ', '-')|lower}}",
+    "description": "Quick reason(s) why this pipeline is cool.",
 
-    "year": "2016",
-    "version": "0.0.1",
-
-    "github_url": "git@github.com:{{cookiecutter.github_org if cookiecutter.github_org else cookiecutter.github_username}}/{{cookiecutter.repo_name}}.git"
+    "year": "2017",
+    "version": "0.0.1"
 }

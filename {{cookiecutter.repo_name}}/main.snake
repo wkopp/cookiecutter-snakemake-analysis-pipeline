@@ -15,13 +15,15 @@ sns.set_style("whitegrid")
 
 from python.functions import *
 
+configfile: "configs/main.yaml"
+
 ORIGINAL_CONFIG_AS_STRING = yaml.dump(config, default_flow_style=False)
 
 
 #### COMMON RUN SPECIFICS ####
 
 RUN_NAME = config["COMMON"]["RUN_NAME"]
-OUT_DIR = "{base_dir}/{run_name}".format(base_dir=config["COMMON"]["OUT_DIR_LOCATION"], run_name=RUN_NAME)
+OUT_DIR = os.environ["PRJ_DATA_DIR"]
 LOGS_DIR = OUT_DIR+"/logs"
 
 INPUT_ALL = []
@@ -170,4 +172,4 @@ rule rule_shell_cmd:
 #### ALL ####
 # ---
 rule all:
-    input: input_all
+    input: INPUT_ALL

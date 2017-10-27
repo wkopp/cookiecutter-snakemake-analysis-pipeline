@@ -1,4 +1,4 @@
-# {{ cookiecutter.pipeline_name }}
+# {{ cookiecutter.project_name }}
 
 
 - version number: {{ cookiecutter.version }}
@@ -6,7 +6,7 @@
 
 ## Overview
 
-{{ cookiecutter.pipeline_short_description }}
+{{ cookiecutter.description }}
 
 ### Details
 TBA
